@@ -1,0 +1,48 @@
+{{#each error}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<h4> {{content.title}}</h4>
+<div class="card_1">
+  <h5 style="padding: 6px;text-align: left;">{{formatDate CreatedAt 'MMMM Do YYYY'}}</h5>
+  <p style="text-align: left;">description {{stripTags content.description }}</p>
+  <p><a href="/newsfeed" class="btn waves-effect waves-light" style="margin-bottom: 20px;">BACK<i
+        class="material-icons left ">arrow_back</i></a>
+  </p>
+</div>
+<div class="card" >
+  {{#each content.comments}}
+  <div class="card">
+          <div class="card-content">
+            <h5>{{commentBody}}</h5>
+            <div class="chip">
+              {{../content.name}}
+              </a>
+            </div>
+            <br>
+            <small>Posted: {{formatDate commentDate 'MMMM Do YYYY'}}</small>
+          </div>
+        </div>
+  {{/each}}
+</div>
+{{#if user}}
+{{#if content.commentAllowance}}
+<div>add comments
+  <form action="/comment/{{content._id}}?_method=PUT" method="post">
+   <input type="hidden" name="_method" value="PUT">
+   <input type="text" name="commentBody">
+  <button class="btn waves-effect waves-light">Submit</button>
+  </form>
+</div>
+{{else}}
+{{/if}}
+
+{{else}}
+Log in with <a href="/auth/google">Google</a>
+{{/if}}
+
+<div class="fixed-action-btn">
+  <a href="/add" class="btn-floating btn-large waves-effect waves-light red "><i class="material-icons">add</i></a>
+</div>

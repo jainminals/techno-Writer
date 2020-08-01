@@ -1,0 +1,40 @@
+{{#each error}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<h4>News Feeds</h4>
+<div class="row">
+ {{!-- {{content}} --}}
+    {{#each content}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                    {{{editIcon userId ../user _id}}}
+            </div>
+            <div class="card-content center-align">
+              <p>title {{title}}<br></p>  
+              <p style="padding-bottom: 10px;">description {{stripTags (getShortComment description)}}</p>
+                <br>
+                <div class="chip">
+                    <img src={{image}} alt="">
+                    <a href="/content/user/{{userId}}">{{name}}</a>
+                </div>
+                <div class="card-action center-align">
+                    <a href="content/{{_id}}" class="btn gray">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>
+    <h4>No News Feed Founnd</h4>
+    </p>
+
+    {{/each}}
+
+</div>
+<div class="fixed-action-btn">
+    <a href="/add" class="btn-floating btn-large waves-effect waves-light red pulse"><i class="material-icons">add</i></a>
+</div>

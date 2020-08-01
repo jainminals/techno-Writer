@@ -1,0 +1,53 @@
+p{
+  margin: 10px 0 !important;
+}
+
+.login-container{
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.card_1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card_1 p{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+
+.card_1 button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000 !important;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 50px !important;
+}
+
+.card_1 button:hover {
+  opacity: 0.7;
+}
+
+.btn-float{
+  float: left;
+  margin-right: 10px;
+}
+
+.fa-edit{
+  font-weight: 100px !important;
+}
+table{
+  width: 120% !important;
+}

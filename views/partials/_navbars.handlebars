@@ -1,0 +1,20 @@
+<nav class="gray darken-3">
+  <div class="nav-wrapper container pulse">
+    <a href="#!" class="brand-logo center"> Techno Writer</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+
+   
+    <ul class="sidenav" id="mobile-demo">
+       {{#if user}}
+      <li><a href="/add">Add Content</a></li>
+      <li><a href="/profile/{{user._id}}">Profile</a></li>
+      <li><a href="/newsfeed">Show Content</a></li>
+      <li><a href="/logout">logout</a></li>
+   {{else}}
+      <li><a href="/newsfeed/public">Public Story</i></a></li>
+      <li><a href="/auth/google">login</i></a></li>
+       {{/if}}
+    </ul>
+ 
+  </div>
+</nav>

@@ -1,0 +1,38 @@
+<h6>Dashboard</h6>
+<h3>Welcome {{name}}</h3>
+<p>Here are your stories</p>
+{{#if UserData}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each UserData}}
+        <tr>
+            <td><a href="/content/{{_id}}">{{title}}</a></td>
+            <td>{{formatDate CreatedAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td><span class="dash-status">{{status}}</span></td>
+            <td>
+                <a href="/content/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit">Edit</i>
+                </a>
+
+                <form action="/content/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-float red">
+                        <i class="fas fa-trash">Delete</i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You have not created any stories</p>
+{{/if}}

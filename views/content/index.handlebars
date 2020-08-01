@@ -1,0 +1,36 @@
+<h3>Add content </h3>
+<div class="row">
+  <form action="/addContent" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="title" name="title">
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <select id="status" name="status">
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+        <label for="status">status</label>
+      </div>
+    </div>
+    <div class="row">
+      <label>
+        <input type="checkbox" class="filled-in" name="allowComments" value="true"/>
+        <span>Allow comments</span>
+      </label>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <h5>Tell Us your Content</h5>
+        <textarea id="body" name="body"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Save" class="btn">
+      <a href="/newsfeed" class="btn orange">Cancle</a>
+    </div>
+  </form>
+</div>
